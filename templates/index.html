@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Weather Data</title>
+        <link rel="stylesheet" href="/static/css/index.css">
+        <script src="/static/js/jquery-3.6.0.min.js"></script>
+        <script src="/static/js/moment.min.js"></script>
+        <script src="/static/js/Chart.js"></script>
+    </head>
+    <body>
+        <header>
+            <div id="top-header">
+                <div id="logo-text">
+                    <h2>Weather Look Up</h2>
+                </div>   
+                <div id="search-city">
+                    <label>Search Country/City: </label>            
+                    <input list="city-list" id="city-input">
+                    <datalist id="city-list">
+                    </datalist>
+                    <button id="get-data">Get</button>
+                </div>
+            </div>   
+        </header>
+
+        <section style="float: left; width:45%; height: 30%; display: none;" id="section1">
+            <div id="weather-box-1" >
+                <div>
+                    <div style="display:inline-block; vertical-align: top;">
+                        <h3 id="weather-main" style="margin-bottom: 0;">Zing</h3>
+                        <span id="weather-desc">desc of weather</span><br>
+                        <span style="font-size: 10px;" ><b>Last updated:</b><span id="last-updated-date">date</span></span>
+                    </div>
+                    <div style="display:inline-block; padding-left:100px;">
+                        <img src="/static/assets/weather_icons/2xxd.svg" height="100px" width="100px" id="weather_image">
+                    </div>
+                </div>
+                <div>
+                    <canvas id="weather-box-1-canvas" style="width:80%;height: 40%;"></canvas>
+                </div>
+            </div>
+        </section>
+<section style="float: right; width: 45%; height: 30%;display: none;" id="section2">
+    <div style="display: inline-block;width:18%">
+        <div>
+            <h4 style="display: inline-block;">Lat:&nbsp;<h5 style="display: inline-block;" id="latitude">00</h5></h4> <br>
+            <h4 style="display: inline-block;">Lon:&nbsp;<h5 style="display: inline-block;" id="longitude">00</h5></h4> 
+        </div>
+        <div class="compass">
+            <div class="direction">
+                <p style="padding-top: 25%;text-align: center;"><span id="direction-value">NE</span><br><span id="wind-speed">10mph</span></p>
+            </div>
+            <div class="arrow ne" id="arrow"></div>
+        </div>
+    </div>
+    <div style="display: inline-block;width:80% !important;height:100%!important;">
+        <canvas id="weather-box-2-canvas" height="300" width="300" style="height: 300px !important;width:300px !important;"></canvas>
+    </div>   
+</section>
+<section id="section3">
+    <div>
+        <h2> ##No data## Select a city or country.</h2>
+    </div>
+</section>    
+        <script src="/static/js/index.js"></script>
+    </body>
+</html>
